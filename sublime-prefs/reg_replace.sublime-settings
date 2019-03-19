@@ -1,0 +1,117 @@
+////////////////////////////////
+// Regex with scope qualifiers//
+////////////////////////////////
+// Required parameters:
+//     find:    Regex description of what you would like to target.
+//
+// Optional parameters:
+//     replace:      description of what you would like to replace target with.
+//                   Variables are okay for non-literal searches and are done by escaping
+//                   the selection number \\1 etc.  Default value is "\\0".
+//     literal:      Boolean setting to define whether the find and replace is literal or not.
+//                   Default is false.
+//     greedy:       Boolean setting to define whether search is greedy or not. Default is true.
+//     case:         Boolean defining case sensitivity.  True equals sensitive. Defualt is true.
+//     dotall:       Boolean defining whether to use dotall flag in regex (include \n etc. when using dot).
+//                   Default is False
+//     scope_filter: an array of scope qualifiers for the match.
+//                       - Any instance of scope qualifies match: scope.name
+//                       - Entire match of scope qualifies match: !scope.name
+//                       - Any instance of scope disqualifies match: -scope.name
+//                       - Entire match of scope disqualifies match: -!scope.name
+
+//////////////////////////////////////////////////////////////
+// Scope search with regex qualifier (also find and replace)//
+//////////////////////////////////////////////////////////////
+// Required parameters:
+//     scope:    scope you would like to target
+//
+// Optional parameters:
+//     find:            regex description that is to be applied to the scope
+//                      to qualify.  Also can be used to find and replace
+//                      within the found scope.  Default is None.
+//     replace:         description of what you would like to replace within the scope.
+//                      Default value is "\\0".
+//     literal:         Boolean setting to define whether the find and replace is literal or not.
+//                      Default is false.
+//     greedy_replace:  Boolean setting to define whether regex search is greedy or not. Default is true.
+//     greedy_scope:    Boolean setting to define whether scope search is greedy or not. Default is true.
+//     case:            Boolean setting to define whether regex search is case sensitive. Default is true.
+//     dotall:          Boolean defining whether to use dotall flag in regex (include \n etc. when using dot).
+//                      Default is False
+//     multi_pass_regex:Boolean setting to define whether there will be multiple sweeps on the scope region
+//                      region to find and replace all instances of the regex, when regex cannot be formatted
+//                      to find all instances in a greedy fashion.  Default is false.
+{
+    // Example replacements
+    "replacements": {
+        // Remove CFR pagination
+        "clean_cfr_pagination": {
+            "find": "^VerDate.*\n.*\n.*\n",
+            "replace": "",
+            "greedy": true,
+            "case": false
+        },
+        // Fix left quotes
+        "fix_right_cfr_quotes": {
+            "find": "’’",
+            "replace": "”",
+            "greedy": true,
+            "case": false
+        },
+        // Fix left quotes
+        "fix_left_cfr_quotes": {
+            "find": "‘‘",
+            "replace": "“",
+            "greedy": true,
+            "case": false
+        },
+        // Fix Notice ampersands
+        "notice_amps": {
+            "find": "&amp;amp;",
+            "replace": "&amp;",
+            "greedy": true,
+            "case": false
+        },
+        // Fix Notice ampersands
+        "notice_amps_nums": {
+            "find": "&amp;#",
+            "replace": "&#",
+            "greedy": true,
+            "case": false
+        },
+        // Fix Notice ems
+        "notice_ems": {
+            "find": "&lt;em data-original=\"E-03\"&gt;",
+            "replace": "",
+            "greedy": true,
+            "case": false
+        },
+        // Fix Notice /ems
+        "notice_em_ends": {
+            "find": "&lt/em&gt;",
+            "replace": "",
+            "greedy": true,
+            "case": false
+        },
+        // Keyterm fragments
+        "keyterm_fragments": {
+            "find": "<content><ref ",
+            "case": false
+        },
+        // Weird content fragmentation
+        "weird_content_issues": {
+            "find": "<content>—</content>",
+            "case": false
+        },
+/*
+        // 
+        "": {
+            "find": "",
+            "replace": "",
+            "greedy": true,
+            "case": false
+        },
+*/
+    }
+}

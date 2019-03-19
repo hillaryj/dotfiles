@@ -1,0 +1,36 @@
+[
+    // Example commands.
+    // {
+    //     "caption": "Reg Replace: HTML5 Remove Deprecated Type Attr",
+    //     "command": "reg_replace",
+    //     "args": {"replacements": ["html5_remove_deprecated_type_attr"]}
+    // },
+    // {
+    //     "caption": "Reg Replace: Remove Trailing Spaces",
+    //     "command": "reg_replace",
+    //     "args": {"replacements": ["remove_trailing_spaces"]}
+    // },
+    // // Chained replacements in one command
+    // {
+    //     "caption": "Reg Replace: Remove HTML Comments and Trailing Spaces",
+    //     "command": "reg_replace",
+    //     "args": {"replacements": ["remove_html_comments", "remove_trailing_spaces"]}
+    // },
+
+    {
+        "caption": "eRegs CFR Cleanup",
+        "command": "reg_replace",
+        "args": {"replacements": ["clean_cfr_pagination", "fix_left_cfr_quotes", "fix_right_cfr_quotes"]}
+    },
+    {
+        "caption": "eRegs Notice Cleanup",
+        "command": "reg_replace",
+        "args": {"replacements": ["notice_amps", "notice_amps_nums", "fix_notice_ems", "fix_notice_em_ends"]}
+    }
+    {
+        "caption": "eRegs Keyterm Fragments",
+        "command": "reg_replace",
+        "args": {"replacements": ["keyterm_fragments"]}
+    }
+
+]
