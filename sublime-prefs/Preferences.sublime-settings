@@ -43,7 +43,7 @@
 	"caret_extra_width": 0,
 	"caret_style": "smooth",
 	"close_windows_when_empty": false,
-	"color_scheme": "Packages/User/SublimeLinter/Monokai-H (SL).tmTheme",
+	"color_scheme": "Packages/User/Monokai-H.tmTheme",
 	"copy_with_empty_selection": true,
 	"create_window_at_startup": true,
 	"default_encoding": "UTF-8",
@@ -93,10 +93,11 @@
 		".hg",
 		"CVS"
 	],
+	"font_face": "Hack",
 	"font_options":
 	[
 	],
-	"font_size": 20,
+	"font_size": 15,
 	"gpu_window_buffer": "auto",
 	"gutter": true,
 	"highlight_line": false,
@@ -104,8 +105,7 @@
 	"hot_exit": true,
 	"ignored_packages":
 	[
-		"Anaconda",
-		"GitGutter",
+		"Markdown",
 		"Vintage"
 	],
 	"indent_guide_options":
@@ -152,6 +152,7 @@
 	"smart_indent": true,
 	"spell_check": false,
 	"spelling_selector": "markup.raw, source string.quoted - punctuation - meta.preprocessor.c.include, source comment - source comment.block.preprocessor, -(source, constant, keyword, storage, support, variable, markup.underline.link, meta.tag)",
+	"sublack.black_on_save": true,
 	"tab_completion": true,
 	"tab_size": 4,
 	"theme": "Default.sublime-theme",
